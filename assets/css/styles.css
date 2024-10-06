@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Definição de variáveis CSS para cores */
+:root {
+    --background-gradient-start: #2c003e;
+    --background-gradient-end: #4b0082;
+    --text-color: #ffffff;
+    --button-border-color: #ffffff;
+    --button-hover-bg-color: #ffffff;
+    --button-hover-text-color: #4b0082;
+    --container-bg-color: rgba(0, 0, 0, 0.85);
+    --container-hover-scale: 1.02;
+    --profile-border-color: #ffffff;
+    --profile-shadow-color: rgba(0, 0, 0, 0.2);
+    --content-bg-color: rgba(0, 0, 0, 0.7);
+    --footer-bg-color: rgba(0, 0, 0, 0.85);
+    --footer-link-hover-color: #4b0082;
+    --link-hover-color: #ff0000;
+}
+
+p:hover{
+    color: var(--button-hover-text-color);
+}
+
+/* Estilos gerais do corpo */
+body {
+    background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+    font-family: "Inter", sans-serif;
+    color: var(--text-color);
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal */
+#container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    background: var(--container-bg-color);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+#container:hover {
+    transform: scale(var(--container-hover-scale));
+}
+
+/* Perfil */
+#profile {
+    text-align: center;
+    line-height: 24px;
+}
+
+#profile img {
+    width: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--profile-border-color);
+    box-shadow: 0 4px 8px var(--profile-shadow-color);
+    transition: transform 0.3s;
+}
+
+#profile img:hover {
+    transform: scale(1.1);
+}
+
+#profile p {
+    font-weight: 600;
+    line-height: 24px;
+    margin-top: 12px;
+    font-size: 1.5em;
+}
+
+/* Conteúdo principal */
+.main-content {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid var(--button-border-color);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.button:hover {
+    background-color: var(--button-hover-bg-color);
+    color: var(--button-hover-text-color);
+    transform: scale(1.05);
+}
+
+#content {
+    margin-top: 30px;
+    background: var(--content-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+footer {
+    width: 100%;
+    background: var(--footer-bg-color);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--footer-link-hover-color);
+    transform: scale(1.1);
+}
+
+/* Estilos para o conteúdo dinâmico */
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.link i {
+    font-size: 24px;
+}
+
+.link:hover {
+    color: var(--link-hover-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #container {
+        width: 90%;
+    }
+
+    .main-content {
+        margin-top: 20px;
+    }
+
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-links .link {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    #profile img {
+        width: 90px;
+    }
+
+    #profile p {
+        font-size: 1.2em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .footer-link {
+        font-size: 20px;
+    }
+
+    .link {
+        font-size: 16px;
+    }
+
+    .link i {
+        font-size: 20px;
+    }
+}
